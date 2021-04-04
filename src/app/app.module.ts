@@ -18,12 +18,28 @@ import { AdminProductsComponent } from './components/admin/admin-products/admin-
 import { AdminOrdersComponent } from './components/admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './components/login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductFormComponent } from './components/admin/product-form/product-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, ShoppingCartComponent, HomeComponent, ProductsComponent, CheckOutComponent, OrderSuccessComponent, MyOrdersComponent, AdminProductsComponent, AdminOrdersComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    ShoppingCartComponent,
+    HomeComponent,
+    ProductsComponent,
+    CheckOutComponent,
+    OrderSuccessComponent,
+    MyOrdersComponent,
+    AdminProductsComponent,
+    AdminOrdersComponent,
+    LoginComponent,
+    ProductFormComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,

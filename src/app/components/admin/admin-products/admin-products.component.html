@@ -1,1 +1,28 @@
-<p>admin-products works!</p>
+<a  class="btn btn-primary" routerLink="/admin/products/new" role="button">New Product</a>
+
+<input (keyup)="filter(query.value)" #query type="text" class="form-control form-control-lg my-3"  placeholder="Search...">
+
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Category</th>
+        <th scope="col">Price</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of filteredProducts; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{p.payload.val().title}}</td>
+        <td>{{p.payload.val().category}}</td>
+        <td>{{p.payload.val().price}}</td> 
+        <td> 
+          <a class="btn btn-primary me-2" [routerLink]="['/admin/products/',p.key]" role="button">Edit</a> 
+          <button (click)="deleteProduct(p.key)" type="button" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
