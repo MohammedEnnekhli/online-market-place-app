@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { take } from 'rxjs/operators';
-import { Product } from 'src/app/models/product.model';
-import { CategoryService } from 'src/app/sevices/category.service';
-import { ProductService } from 'src/app/sevices/product.service';
+import { Product } from 'shared/models/product.model';
+import { CategoryService } from 'shared/services/category.service';
+import { ProductService } from 'shared/services/product.service';
 
 @Component({
   selector: 'app-product-form',
@@ -13,7 +13,7 @@ import { ProductService } from 'src/app/sevices/product.service';
 export class ProductFormComponent implements OnInit {
   categories$;
   productId: string;
-  product: Product = { category: '', title: '', price: '', imageUrl: '' };
+  product: Product = { category: '', title: '', price: 0, imageUrl: '' };
   constructor(
     private cs: CategoryService,
     private ps: ProductService,

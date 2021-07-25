@@ -1,0 +1,13 @@
+
+<div class="row">
+  <div class="col-3">
+    <app-product-filter [category]="category"></app-product-filter>
+  </div> 
+  <div class="col">
+    <div class="row" *ngIf="cart$ |async as cart">
+      <ng-container *ngFor="let p of filtredProducts; let i=index">
+        <app-product-card class="col-4 mb-3" [product]="p" [shopping-cart]="cart"></app-product-card>
+      </ng-container> 
+  </div>
+  </div>
+</div>

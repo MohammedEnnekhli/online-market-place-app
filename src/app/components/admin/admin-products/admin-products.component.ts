@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SnapshotAction } from '@angular/fire/database';
 import { Subscription } from 'rxjs';
-import { Product } from 'src/app/models/product.model';
-import { ProductService } from 'src/app/sevices/product.service';
+import { Product } from 'shared/models/product.model';
+import { ProductService } from 'shared/services/product.service';
 
 @Component({
   selector: 'app-admin-products',

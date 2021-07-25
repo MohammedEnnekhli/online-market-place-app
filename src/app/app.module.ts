@@ -5,7 +5,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AppComponent } from './app.component';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../src/environments/environment';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -20,6 +20,12 @@ import { LoginComponent } from './components/login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductFormComponent } from './components/admin/product-form/product-form.component';
 import { FormsModule } from '@angular/forms';
+import { ProductFilterComponent } from './components/products/product-filter/product-filter.component';
+import { ProductCardComponent } from './shared/components/product-card/product-card.component';
+import { ProductQuantityComponent } from './shared/components/product-quantity/product-quantity.component';
+import { ShoppingCartSummaryComponent } from './components/shopping-cart-summary/shopping-cart-summary.component';
+import { ShippingFormComponent } from './components/shipping-form/shipping-form.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +41,12 @@ import { FormsModule } from '@angular/forms';
     AdminOrdersComponent,
     LoginComponent,
     ProductFormComponent,
+    ProductFilterComponent,
+    ProductCardComponent,
+    ProductQuantityComponent,
+    ShoppingCartSummaryComponent,
+    ShippingFormComponent,
+    OrderDetailsComponent,
   ],
   imports: [
     BrowserModule,
