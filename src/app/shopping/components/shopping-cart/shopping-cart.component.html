@@ -1,0 +1,122 @@
+<h1>Shopping Cart</h1>
+<div class="row col-8 card" *ngIf="cart$ | async as cart">
+  <div class="card-body">
+    <p class="card-title d-inline">
+      You have {{ cart.totalItemsCount }} items in your shopping cart.
+    </p>
+    <button
+      *ngIf="cart.items.length"
+      (click)="clearCart()"
+      class="btn btn-light float-end"
+    >
+      Clear Shopping Cart
+    </button>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li
+      class="
+        list-group-item
+        d-none d-md-flex
+        justify-content-between
+        align-items-center
+      "
+    >
+      <strong class="text-center w-25"></strong>
+      <strong class="text-left w-25">Product</strong>
+      <strong class="text-left w-25">Quantity</strong>
+      <strong class="text-center w-25">Price</strong>
+    </li>
+    <li
+      *ngFor="let item of cart.items"
+      class="
+        list-group-item
+        d-flex
+        flex-md-row flex-column
+        justify-content-between
+        align-items-center
+      "
+    >
+      <div
+        [style.backgroundImage]="'url(' + item.imageUrl + ')'"
+        class="tumbnail text-center"
+      ></div>
+
+      <span class="w-25 text-center">
+        {{ item.title }}
+      </span>
+      <app-product-quantity
+        class="w-25 text-center"
+        [product]="item"
+        [shopping-cart]="cart"
+      >
+      </app-product-quantity>
+
+      <span class="w-25 text-center">
+        {{ item.totalPrice | currency: "USD" }}
+      </span>
+    </li>
+    <li class="list-group-item py-3">
+      <strong class="w-25 text-center float-end">
+        {{ cart.totalPrice | currency: "USD" }}
+      </strong>
+    </li>
+    <li class="list-group-item py-3">
+      <a
+        *ngIf="cart.items.length"
+        routerLink="/check-out"
+        class="btn btn-primary"
+        >Check Out</a
+      >
+    </li>
+  </ul>
+</div>
+<!-- <div class="row col-8" *ngIf="cart$ |async as cart">
+    <p>
+        You have {{cart.totalItemsCount}} items in your shopping cart.
+        <button 
+    *ngIf="cart.items.length"
+        (click)="clearCart()"
+        class="btn btn-light btn-sm">Clear Shopping Cart
+    </button>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Product</th>
+                <th class="text-center" style="width:230px" >Quantity</th>
+                <th class="text-end" style="width: 200px;">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of cart.items">
+                <td>
+                    <div [style.backgroundImage]="'url('+ item.imageUrl+')'" class="tumbnail">
+                        </div>
+                    </td>
+                <td>
+                    {{item.title}}
+                </td>
+                <td>
+                    <app-product-quantity 
+                    [product]="item"
+                    [shopping-cart]="cart"> 
+                   </app-product-quantity>
+
+                </td>
+                <td class="text-end">
+                    {{item.totalPrice | currency:'USD'}}
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th class="text-end">{{cart.totalPrice| currency:'USD'}}</th>
+        </tfoot>
+    </table>
+    
+    <a *ngIf="cart.items.length" routerLink="/check-out" class="btn btn-primary btn-sm">Check Out</a>
+    
+</div> -->

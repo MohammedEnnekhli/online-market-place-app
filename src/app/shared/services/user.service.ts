@@ -3,9 +3,7 @@ import { AngularFireDatabase, AngularFireObject } from '@angular/fire/database';
 import firebase from 'firebase/app';
 import { User } from '../models/user.model';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class UserService {
   constructor(private db: AngularFireDatabase) {}
 

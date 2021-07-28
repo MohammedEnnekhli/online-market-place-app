@@ -1,11 +1,14 @@
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import {
+  AngularFireDatabase,
+  AngularFireList,
+  AngularFireObject,
+} from '@angular/fire/database';
 import { Injectable } from '@angular/core';
 import { Order } from '../models/order';
 import { ShoppingCartService } from './shopping-cart.service';
+import { SharedModule } from 'shared/shared.module';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class OrderService {
   constructor(
     private db: AngularFireDatabase,
@@ -26,5 +29,9 @@ export class OrderService {
     return this.db.list('/orders', (ref) =>
       ref.orderByChild('userId').equalTo(userId)
     );
+  }
+
+  getOrder(orderId: string): AngularFireObject<Order> {
+    return this.db.object('/orders/' + orderId);
   }
 }

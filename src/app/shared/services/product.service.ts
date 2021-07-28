@@ -4,11 +4,10 @@ import {
   AngularFireList,
   AngularFireObject,
 } from '@angular/fire/database';
+import { SharedModule } from 'shared/shared.module';
 import { Product } from '../models/product.model';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ProductService {
   constructor(private db: AngularFireDatabase) {}
 

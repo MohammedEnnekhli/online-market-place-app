@@ -7,9 +7,7 @@ import { switchMap } from 'rxjs/operators';
 import { User } from '../models/user.model';
 import { UserService } from './user.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class AuthService {
   user$: Observable<firebase.User>;
 

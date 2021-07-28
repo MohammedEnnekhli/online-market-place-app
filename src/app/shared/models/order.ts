@@ -16,7 +16,7 @@ export class Order {
           imageUrl: item.imageUrl,
           price: item.price,
         },
-        qunatity: item.quantity,
+        quantity: item.quantity,
         totalPrice: item.totalPrice,
       };
     });

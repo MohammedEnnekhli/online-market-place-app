@@ -2,13 +2,12 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireObject } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
+import { SharedModule } from 'shared/shared.module';
 import { Product } from '../models/product.model';
 import { ShoppingCartItem } from '../models/shopping-cart-item.model';
 import { ShoppingCart } from '../models/shopping-carts';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ShoppingCartService {
   constructor(private db: AngularFireDatabase) {}
 
