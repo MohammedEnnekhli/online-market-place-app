@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SnapshotAction } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
